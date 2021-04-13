@@ -20,6 +20,7 @@
     "host": "ec2-54-167-152-185.compute-1.amazonaws.com",
     "dialect": "postgres",
     "port": "5432",
+    "ssl": true,
     "dialectOptions": {
       "ssl": true,
       "rejectUnauthorized": false
