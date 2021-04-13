@@ -69,6 +69,10 @@ app.use(express.static(publicDirectoryPath));
 //     setTimeout(() => next(), 2000);
 // });
 
+app.get('/', async (req, res) => {
+    res.send('API');
+});
+
 app.get('/product-categories', async (req, res) => {
     const { page, size } = req.query;
     const { limit, offset } = getPagination(page, size);
