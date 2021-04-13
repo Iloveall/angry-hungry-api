@@ -7,6 +7,7 @@ const Product = models.Product;
 const ProductOption = models.ProductOption;
 const ProductOptionProduct = models.ProductOptionProduct;
 const cors = require('cors');
+const port = process.env.PORT || 3000;
 
 // Product.belongsToMany(ProductOption, { through: 'ProductProductOptions' });
 // ProductOption.belongsToMany(Product, { through: 'ProductProductOptions' });
@@ -124,6 +125,6 @@ app.get('/options', async (req, res) => {
 });
 
 
-app.listen(3000, () => {
-    console.log('Started 3000');
+app.listen(port, () => {
+    console.log(`Started ${ port }`);
 });
