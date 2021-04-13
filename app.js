@@ -4,14 +4,23 @@ const app = express();
 const models = require('./models');
 const ProductCategory = models.ProductCategory;
 const Product = models.Product;
+const ProductOption = models.ProductOption;
+const ProductOptionProduct = models.ProductOptionProduct;
 const cors = require('cors');
+
+// Product.belongsToMany(ProductOption, { through: 'ProductProductOptions' });
+// ProductOption.belongsToMany(Product, { through: 'ProductProductOptions' });
+//
+// models.sequelize.sync({force: false});
 
 // npx sequelize-cli model:generate --name ProductCategory --attributes name:string,url:string
 // npx sequelize-cli model:generate --name Product --attributes name:string,description:string,category:integer,image:string,price:decimal
 // npx sequelize-cli model:generate --name ProductOption --attributes name:string,description:string,product:integer
+// npx sequelize-cli model:generate --name ProductOptionProduct --attributes productId:integer,productOptionId:integer
 // npx sequelize-cli seed:generate --name demo-products
 // npx sequelize-cli seed:generate --name demo-product-categories
 // npx sequelize-cli seed:generate --name demo-product-options
+// npx sequelize-cli seed:generate --name demo-product-options-product
 
 // const testMiddleware = (req, res, next) => {
 //     const { specialParam } = req.query;
@@ -22,6 +31,8 @@ const cors = require('cors');
 //
 //     next();
 // };
+
+// await se
 
 const getPagination = (page, size = 10) => {
     const limit = +size;
@@ -89,10 +100,28 @@ app.get('/products', async (req, res) => {
 app.get('/products/:id', async (req, res) => {
     const { id } = req.params;
 
-    const product = await Product.findOne({where: { id }});
+    const product = await Product.findOne({
+        where: { id },
+        // include: ['options'],
+        include: [{
+            model: ProductOption,
+            as: 'options',
+            through: {
+                // model: ProductOptionProduct,
+                // as: 'productOptionProducts',
+                attributes: []
+            },
+        }],
+    });
 
     res.send(product);
-})
+});
+
+app.get('/options', async (req, res) => {
+    const options = await ProductOption.findAll();
+
+    res.send(options);
+});
 
 
 app.listen(3000, () => {

@@ -4,8 +4,8 @@ module.exports = {
     up: async (queryInterface, Sequelize) => {
         await queryInterface.bulkInsert('ProductCategories', [
             {
-                name: 'Chinese',
-                url: 'chinese',
+                name: 'American',
+                url: 'american',
                 createdAt: new Date(),
                 updatedAt: new Date()
             },
@@ -34,8 +34,8 @@ module.exports = {
                 updatedAt: new Date()
             },
             {
-                name: 'American',
-                url: 'american',
+                name: 'Chinese',
+                url: 'chinese',
                 createdAt: new Date(),
                 updatedAt: new Date()
             },
