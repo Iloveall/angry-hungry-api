@@ -21,7 +21,6 @@
     "dialect": "postgres",
     "port": "5432",
     "dialectOptions": {
-      "ssl": true,
       "rejectUnauthorized": false
     }
   }
