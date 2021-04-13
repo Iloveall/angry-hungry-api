@@ -209,7 +209,7 @@ module.exports = {
                 name: 'Transparent noodles with chicken',
                 price: 7,
                 image: 'Frame 11.png',
-                categoryId: 1,
+                categoryId: 6,
                 createdAt: new Date(),
                 updatedAt: new Date()
             },
@@ -217,7 +217,7 @@ module.exports = {
                 name: 'Transparent noodles with veal',
                 price: 4,
                 image: 'Frame 11.png',
-                categoryId: 1,
+                categoryId: 6,
                 createdAt: new Date(),
                 updatedAt: new Date()
             },
@@ -225,7 +225,7 @@ module.exports = {
                 name: 'Udon with chicken',
                 price: 8,
                 image: 'Frame 21.png',
-                categoryId: 1,
+                categoryId: 6,
                 createdAt: new Date(),
                 updatedAt: new Date()
             },
@@ -233,7 +233,7 @@ module.exports = {
                 name: 'Udon with veal',
                 price: 6,
                 image: 'Frame 21.png',
-                categoryId: 1,
+                categoryId: 6,
                 createdAt: new Date(),
                 updatedAt: new Date()
             },
@@ -241,7 +241,7 @@ module.exports = {
                 name: 'Udon with seafood',
                 price: 8,
                 image: 'Frame 16.png',
-                categoryId: 1,
+                categoryId: 6,
                 createdAt: new Date(),
                 updatedAt: new Date()
             },
@@ -249,14 +249,14 @@ module.exports = {
                 name: 'Rise with seafood',
                 price: 9,
                 image: 'Frame 8.png',
-                categoryId: 1,
+                categoryId: 6,
                 createdAt: new Date(),
                 updatedAt: new Date()
             },
             {
                 name: 'Rise with prawns',
                 price: 10,
-                categoryId: 1,
+                categoryId: 6,
                 createdAt: new Date(),
                 updatedAt: new Date()
             },
