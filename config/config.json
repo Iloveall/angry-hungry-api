@@ -4,7 +4,10 @@
     "password": null,
     "database": "angry_hungry",
     "host": "127.0.0.1",
-    "dialect": "postgres"
+    "dialect": "postgres",
+    "dialectOptions": {
+      "ssl": true
+    }
   },
   "test": {
     "username": "root",
